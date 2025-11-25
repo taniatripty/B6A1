@@ -25,17 +25,11 @@ function formatValue(
   return !value;
 }
 
-// console.log(formatValue("hello")); 
-// console.log(formatValue(7));       
-// console.log(formatValue(true));   
-// console.log(formatValue(false));   
-
 
 function getLength(value: string | unknown[]): number {
 
   let count = 0;
 
- 
   if (typeof value === "string") {
     for (const _ of value) {
       count++;
@@ -51,9 +45,7 @@ function getLength(value: string | unknown[]): number {
 
   return 0; 
 }
-console.log(getLength("Hello"));       
-console.log(getLength(["a", "b"]));    
-console.log(getLength([1, 2, 3, 4])); 
+ 
 
 
 class Person {
@@ -68,17 +60,12 @@ class Person {
 
   
   getDetails(): string {
-    return `Name: ${this.name}, Age: ${this.age}'`;
+    return `Name: ${this.name}, Age: ${this.age}`;
   }
 }
 
 
-const person1 = new Person("John Doe", 30);
-console.log(person1.getDetails()); 
 
-
-const person2 = new Person("Alice", 25);
-console.log(person2.getDetails());
 
 
 type Item = {
@@ -98,14 +85,6 @@ function filterByRating(items: Item[]): Item[] {
   return result;
 }
 
-const books = [
-  { title: 'Book A', rating: 4.5 },
-  { title: 'Book B', rating: 3.2 },
-  { title: 'Book C', rating: 5.0 },
-];
-
-console.log(filterByRating(books));
-
 type User = {
   id: number;
   name: string;
@@ -124,13 +103,7 @@ function filterActiveUsers(users: User[]): User[] {
 
   return result;
 }
-const users = [
-  { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
-  { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
-  { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
-];
 
-console.log(filterActiveUsers(users));
 
 interface Book {
   title: string;
@@ -147,14 +120,6 @@ function printBookDetails(book: Book): void {
   );
 }
 
-const myBook: Book = {
-  title: 'The Great Gatsby',
-  author: 'F. Scott Fitzgerald',
-  publishedYear: 1925,
-  isAvailable: true,
-};
-
-printBookDetails(myBook);
 
 function getUniqueValues(arr1: (string | number)[], arr2: (string | number)[]): (string | number)[] {
   const result: (string | number)[] = [];
@@ -179,9 +144,7 @@ function getUniqueValues(arr1: (string | number)[], arr2: (string | number)[]): 
 
   return result;
 }
-const array1 = [1, 2, 3, 4, 5];
-const array2 = [3, 4, 5, 6, 7];
-console.log(getUniqueValues(array1, array2));
+
 
 
 type Product = {
@@ -206,10 +169,3 @@ function calculateTotalPrice(products: Product[]): number {
     .reduce((sum, price) => sum + price, 0);
 }
 
-const products = [
-  { name: 'Pen', price: 10, quantity: 2 },               
-  { name: 'Notebook', price: 25, quantity: 3, discount: 10 }, 
-  { name: 'Bag', price: 50, quantity: 1, discount: 20 },      
-];
-
-console.log(calculateTotalPrice(products)); 
