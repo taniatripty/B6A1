@@ -60,8 +60,8 @@ function getProperty(obj: Person, key: PersonKeys) {
   return obj[key];
 }
 
-const person: Person = { name: "Rafi", age: 25, email: "rafi@example.com" };
-console.log(getProperty(person, "name")); // Output: "Rafi"
+const person: Person = { name: "tania", age: 25, email: "tania@gmail.com" };
+console.log(getProperty(person, "name")); // Output: "tania"
 // console.log(getProperty(person, "phone")); // Error: 'phone' is not assignable
 
 
