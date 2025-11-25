@@ -39,11 +39,11 @@ type Animal = {
 type Dog = Animal & { breed: string }; // intersection type
 
 
-বাস্তব উদাহরণ: ধরুন, আপনি একটি বড় প্রজেক্টে employee management system বানাচ্ছেন। Employee interface ব্যবহার করলে সহজে extend করে নতুন ধরনের employee তৈরি করা যায়। আর type ব্যবহার করলে union বা intersection type বানাতে সুবিধা হয়, যেমন “Student | Teacher” ইত্যাদি।
+বাস্তব উদাহরণ: আমরা একটি বড় প্রজেক্টে employee management system বানাচ্ছি। Employee interface ব্যবহার করলে সহজে extend করে নতুন ধরনের employee তৈরি করতে পারি। আর type ব্যবহার করলে union বা intersection type বানাতে সুবিধা হয়, যেমন “Student | Teacher” ইত্যাদি।
 
 ২. TypeScript-এ keyof কী ও তার ব্যবহার
 
-keyof হলো এমন একটি keyword যা আপনার অবজেক্টের সব প্রোপার্টি নামকে টাইপ হিসেবে ব্যবহার করতে দেয়। সহজভাবে বলতে গেলে, এটি TypeScript-কে বলে, “এই অবজেক্টের যেকোনো প্রোপার্টি নাম valid।”
+keyof হলো এমন একটি keyword যা অবজেক্টের সব প্রোপার্টি নামকে টাইপ হিসেবে ব্যবহার করতে দেয়। সহজভাবে বলতে গেলে, এটি TypeScript-কে বলে, “এই অবজেক্টের যেকোনো প্রোপার্টি নাম valid।”
 
 উদাহরণ:
 
@@ -62,14 +62,14 @@ function getProperty(obj: Person, key: PersonKeys) {
 
 const person: Person = { name: "Rafi", age: 25, email: "rafi@example.com" };
 console.log(getProperty(person, "name")); // Output: "Rafi"
-// console.log(getProperty(person, "phone")); // ❌ Error: 'phone' is not assignable
+// console.log(getProperty(person, "phone")); // Error: 'phone' is not assignable
 
 
 এখানে আমরা দেখতে পাচ্ছি, keyof ব্যবহার করলে ফাংশনে শুধু বৈধ প্রোপার্টি নাম পাঠানো সম্ভব। কেউ ভুল নাম পাঠালে TypeScript সঙ্গে সঙ্গে error দেখাবে।
 
 বাস্তব জীবনে ব্যবহার
 
-ধরুন, আপনি একটি বড় কোম্পানিতে employee management system বানাচ্ছেন।
+ আমরা একটি বড় কোম্পানিতে employee management system বানাচ্ছি।
 
 প্রতিটি employee-এর কিছু fixed property আছে: name, age, email।
 
