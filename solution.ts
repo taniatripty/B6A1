@@ -2,15 +2,12 @@ function formatValue(
   value: string | number | boolean
 ): string | number | boolean {
   
-  // Handle string → convert to uppercase manually
   if (typeof value === "string") {
     let result = "";
 
-    // Using for...of so TS knows char cannot be undefined
     for (const char of value) {
       const code = char.charCodeAt(0);
 
-      // If lowercase a-z → convert to uppercase
       if (code >= 97 && code <= 122) {
         result += String.fromCharCode(code - 32);
       } else {
@@ -28,10 +25,10 @@ function formatValue(
   return !value;
 }
 
-console.log(formatValue("hello")); 
-console.log(formatValue(7));       
-console.log(formatValue(true));   
-console.log(formatValue(false));   
+// console.log(formatValue("hello")); 
+// console.log(formatValue(7));       
+// console.log(formatValue(true));   
+// console.log(formatValue(false));   
 
 
 function getLength(value: string | unknown[]): number {
